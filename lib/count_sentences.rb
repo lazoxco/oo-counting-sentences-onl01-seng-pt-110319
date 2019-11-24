@@ -15,10 +15,7 @@ class String
   end
 
   def count_sentences
-    if self.end_with?(".", "?", "!", "!!", "...")
-      self.split.count
-    else 
-      0
+    elf.split(/[.!?]/).map{|x| !(x.match(/\w+/).nil?)}.reject{|x| x == false}.size
     end
   end
 end
